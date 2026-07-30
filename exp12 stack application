@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <ctype.h>
+int stack[10],top=-1;
+void push(int x){ stack[++top]=x; }
+int pop(){ return stack[top--]; }
+int main(){
+    char exp[]="23+";
+    int i,a,b;
+    for(i=0;exp[i];i++){
+        if(isdigit(exp[i])) push(exp[i]-'0');
+        else{
+            b=pop(); a=pop();
+            push(a+b);
+        }
+    }
+    printf("%d",pop());
+}
