@@ -1,0 +1,9 @@
+#include <stdio.h>
+int q[10],f=0,r=-1;
+void enqueue(int x){ q[++r]=x; }
+void dequeue(){ f++; }
+int main(){
+    enqueue(10); enqueue(20);
+    dequeue();
+    printf("%d",q[f]);
+}
