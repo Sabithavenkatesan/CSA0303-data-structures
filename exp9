@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(){
+    int a[5]={1,2,3,4,5},l=0,h=4,m,key;
+    scanf("%d",&key);
+    while(l<=h){
+        m=(l+h)/2;
+        if(a[m]==key){ printf("Found"); return 0;}
+        else if(key>a[m]) l=m+1;
+        else h=m-1;
+    }
+    printf("Not Found");
+}
